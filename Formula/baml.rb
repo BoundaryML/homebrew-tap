@@ -5,25 +5,25 @@ class Baml < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.2.4/baml-wrapper-no-self-update-0.2.4-aarch64-apple-darwin.tar.gz"
-      sha256 "54b0dcd9e74452230ec272cc356a3171f605b01e44937fb09313668d69cb5885"
+      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.2.5/baml-wrapper-no-self-update-0.2.5-aarch64-apple-darwin.tar.gz"
+      sha256 "d90f159f4147add2e67bf996fba5ec58efb0ca81fde0897bb4be9862286f96b9"
     end
 
     on_intel do
-      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.2.4/baml-wrapper-no-self-update-0.2.4-x86_64-apple-darwin.tar.gz"
-      sha256 "3d01216748cd442c78ac42aa45e044a2625dca9a44fba51f3f770ee0ee0e3fd7"
+      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.2.5/baml-wrapper-no-self-update-0.2.5-x86_64-apple-darwin.tar.gz"
+      sha256 "bf962ca55c60ab9409fafc23bb25b96a52f7e0ff88ef53877f3dc2f3697d9496"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.2.4/baml-wrapper-no-self-update-0.2.4-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "fdca8ca5ffc7c749a0f38de3e5f448b116d2496a32fe9aa80047cd01d50ca2b5"
+      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.2.5/baml-wrapper-no-self-update-0.2.5-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "3b2bec68ace1f9432d1041a49a0a23b035bb1c2c09dacbd2b1ad86498d3ff74c"
     end
 
     on_intel do
-      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.2.4/baml-wrapper-no-self-update-0.2.4-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "a4666f8e0e72926feaa2641efef07f9e9d2f1432d96ccd4c8e31151ea27e4862"
+      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.2.5/baml-wrapper-no-self-update-0.2.5-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "23129e133259c2bb43973827b85567db1c5b5c27ea55b0dc515e8291301dbc1b"
     end
   end
 
@@ -55,7 +55,7 @@ class Baml < Formula
     ENV["HOME"] = testpath.to_s
     ENV.delete "BAML_VERSION"
 
-    assert_match "baml wrapper 0.2.4",
+    assert_match "baml wrapper 0.2.5",
                  shell_output("#{bin}/baml --version")
     assert_match "installed toolchains: (none)",
                  shell_output("#{bin}/baml toolchain list")
