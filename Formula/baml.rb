@@ -5,25 +5,25 @@ class Baml < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.3.1/baml-wrapper-no-self-update-0.3.1-aarch64-apple-darwin.tar.gz"
-      sha256 "c665f7704183cb44caf5c8e989b5e5465e4f703258070e590598cee7c2202d3c"
+      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.4.0/baml-wrapper-no-self-update-0.4.0-aarch64-apple-darwin.tar.gz"
+      sha256 "d66f34d20f23da02e709c35e560f9933010b30fc7aec092e4a1e4ffde8ca5fa1"
     end
 
     on_intel do
-      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.3.1/baml-wrapper-no-self-update-0.3.1-x86_64-apple-darwin.tar.gz"
-      sha256 "971b1df7af08cea82b77138c1f0bfab8d6d6fb8437bd218c8592a0d5a1409c1c"
+      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.4.0/baml-wrapper-no-self-update-0.4.0-x86_64-apple-darwin.tar.gz"
+      sha256 "7f2ab1f4b4708cc12699bed221b43c2f356da2bf33471255a0478cba9bfe1e9c"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.3.1/baml-wrapper-no-self-update-0.3.1-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "b2427ca6c40979806481eb92bfd5c83989b398b59cb23a04ae90957d967686ce"
+      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.4.0/baml-wrapper-no-self-update-0.4.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "3a66650a9f8e6ed31ae17b018448094c9d25c5b31f3ffb915a1f7afeee838173"
     end
 
     on_intel do
-      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.3.1/baml-wrapper-no-self-update-0.3.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "b3f60e6f9d4ef9f96811cf81de57db45f281d4661ea67e4984a8935792c3308c"
+      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.4.0/baml-wrapper-no-self-update-0.4.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "ad19f8dea0edfa35dfe7ffd522a91815caa6c872f7e8a72afc5ed9d1c153353e"
     end
   end
 
@@ -67,11 +67,11 @@ class Baml < Formula
     ENV["BAML_TOOLCHAIN"] = (testpath/"baml-cli").to_s
 
     version_output = shell_output("#{bin}/baml --version")
-    assert_match "baml wrapper 0.3.1", version_output
+    assert_match "baml wrapper 0.4.0", version_output
     assert_match "Homebrew CLI fixture", version_output
     assert_match "installed toolchains: (none)",
                  shell_output("#{bin}/baml toolchain list")
-    assert_match "self-update is disabled in this build",
-                 shell_output("#{bin}/baml self-update 2>&1", 1)
+    assert_match "baml self update is disabled in this build",
+                 shell_output("#{bin}/baml self update 2>&1", 1)
   end
 end
